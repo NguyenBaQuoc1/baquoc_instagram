@@ -1,7 +1,5 @@
 function Short(params) {
-    return (
-        <h1>Short</h1>
-    )
+  return <h1>Short</h1>;
 }
 
-export default Short
+export default Short;
