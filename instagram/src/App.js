@@ -1,10 +1,11 @@
-import { BrowserRouter as Router , Routes , Route } from 'react-router-dom'
+import { BrowserRouter as Router , Routes , Route, BrowserRouter } from 'react-router-dom'
 
 function App() {
   return (
-    <>
-      <h1>hello ae</h1>
-    </>
+    <BrowserRouter>
+
+    
+    </BrowserRouter>
   );
 }
 
