@@ -1,0 +1,17 @@
+.signin{
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    height: 35px;
+    width: 100px;
+    color: #065fd4;
+    cursor: pointer;
+    margin: 0px 10px;
+
+    &:hover {
+        background-color: #def1ff ;
+    }
+}
+
+.title{
+    padding: 5px;
+}
