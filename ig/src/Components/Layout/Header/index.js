@@ -1,15 +1,49 @@
 import Logo from '../../Icon/logo'
 import styles from './Header.module.scss'
 import classNames from 'classnames/bind'
-import { faEllipsisVertical, faMicrophone, faSearch, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faEllipsisVertical, faGlobe, faKeyboard, faLanguage, faMicrophone, faMoon, faSearch, faUser, faUserShield } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Button from '../../Button'
-import Tippy from '@tippyjs/react';
+import HeadlessTippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
+import React, { useState } from 'react';
+import MenuIteam from '../../Menu'
+import Wrapper from '../../Popper'
 
 const cx = classNames.bind(styles)
 
 function Header() {
+
+    const [showResult, setShowResult] = useState(false);
+
+    const menu = [
+        {
+            icon : <FontAwesomeIcon icon={faUserShield}/>,
+            title : "Your data in YouTube"
+        },
+        {
+            icon : <FontAwesomeIcon icon={faMoon}/>,
+            title : "Appearance: Device theme"
+        },
+        {
+            icon : <FontAwesomeIcon icon={faLanguage}/>,
+            title : "Language:English"
+        },
+        {
+            icon : <FontAwesomeIcon icon={faGlobe}/>,
+            title : "Location: Vietnam"
+        },
+        {
+            icon : <FontAwesomeIcon icon={faKeyboard}/>,
+            title : "Keyboard shortcuts",
+            separate: true,
+        },
+    ]
+    
+    const handleHideResult = () => {
+        setShowResult(false)
+    }
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -25,16 +59,26 @@ function Header() {
 
                 <div className={cx('action')}>
 
-                    <Tippy
+                    <HeadlessTippy
                         interactive
+                        visible={showResult}
+                        onClickOutside={()=>(setShowResult(false))}
                         render={attrs => (
                             <div className="box" tabIndex="-1" {...attrs}>
-                                My tippy box
+                                <Wrapper>
+                                {
+                                    menu.map((data,index)=>{
+                                        return(
+                                            <MenuIteam key={index} data={data} />
+                                        )
+                                    })
+                                }
+                                </Wrapper>
                             </div>
                             )}
                     >
-                        <Button><FontAwesomeIcon icon={faEllipsisVertical}/></Button>
-                    </Tippy>
+                        <button className={cx('icon-menu')} onClick={()=>{setShowResult(true)}}><FontAwesomeIcon icon={faEllipsisVertical}/></button>
+                    </HeadlessTippy>
 
                     <Button signin>
                         <span className={cx('icon')}>
