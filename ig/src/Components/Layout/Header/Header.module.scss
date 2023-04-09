@@ -1,13 +1,14 @@
 .wrapper {
     width: 100%;
     height: 56px;
+    box-shadow: 4px 4px 4px #cccccc2e;
 }
 
 .inner{
     height: 100%;
     display: flex;
     justify-content: space-between;
-    margin: 0px 20px;
+    margin: 0px 30px;
 }
 
 //search
@@ -22,6 +23,7 @@
     width: 100%;
     height: 40px;
     border: none;
+    padding-left: 10px;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     &:focus-visible{
@@ -79,6 +81,10 @@
     padding-right: 5px;
 }
 
+.icon + .icon {
+    margin-left: 10px;
+}
+
 .icon-menu{
     font-size: 25px;
     background-color: transparent;
@@ -89,4 +95,40 @@
     display: flex;
     align-items: center;
 }
+
+.img{
+    display: flex;
+    align-items: center;
+
+}
+
+.img-user{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+}
+
+.btn-action{
+    background-color: transparent;
+    margin-right: 20px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+
+    &:hover {
+        background-color: #ccc;
+        border-radius: 50%;
+    }
+}
+
+.box{
+    background-color: #797979;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 0px 10px;
+    color: #fff;
+}
+
+
 

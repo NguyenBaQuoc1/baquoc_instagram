@@ -1,3 +1,16 @@
-.separate{
-    border-top:  1px solid #ccc;
+.separate {
+    border-top: 1px solid #ccc;
+}
+
+.header {
+    display: flex;
+    cursor: pointer;
+}
+
+.btn-back {
+    background-color: transparent;
+    font-size: 20px;
+    padding: 0px 20px;
+    cursor: pointer;
+
 }
