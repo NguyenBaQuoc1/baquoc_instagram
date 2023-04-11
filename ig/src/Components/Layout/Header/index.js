@@ -2,6 +2,7 @@ import Logo from '../../Icon/logo';
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import {
+    faBars,
     faBell,
     faCircleUser,
     faEllipsisVertical,
@@ -22,8 +23,8 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import React, { useState } from 'react';
-import MenuIteam from '../../Menu/MenuItems';
-import Menu from '../../Menu/Menu';
+import MenuItems from '../../Menu/MenuHeader/MenuItems';
+import Menu from '../../Menu/MenuHeader/Menu'
 
 const cx = classNames.bind(styles);
 
@@ -85,8 +86,13 @@ function Header() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
-                    <Logo className={cx('icon-logo')} />
+                <div className={cx('start')}>
+                    <button className={cx('btn-start')}>
+                        <FontAwesomeIcon icon={faBars}/>
+                    </button>
+                    <div className={cx('logo')}>
+                        <Logo className={cx('icon-logo')} />
+                    </div>
                 </div>
 
                 <div className={cx('search')}>

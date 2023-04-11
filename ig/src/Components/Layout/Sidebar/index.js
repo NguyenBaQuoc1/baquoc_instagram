@@ -1,14 +1,38 @@
-import styles from './Sidebar.module.scss'
-import classNames from 'classnames/bind'
-
-const cx = classNames.bind(styles)
+import { useState } from 'react';
+import MenuSidebar from '../../Menu/Menusiderbar/MenuSidebar';
+import Poppersidebar from '../../Menu/Menusiderbar/PoperSidebar';
+import { IconHome, IconShort, IconSubscriptions } from '../../Icon';
 
 function Sidebar() {
+    const [listSidebar, setListSidebar] = useState([]);
+
+    const MenuDefault = [
+        {
+            icon: <IconHome/>,
+            title: 'Trang chủ',
+        },
+        {
+            icon : <IconShort/>,
+            title : "Short"
+        },
+        {
+            icon : <IconSubscriptions/>,
+            title : "Subscriptions"
+        }
+    ];
     return (
-        <div className={cx('wrapper')}>
-            <h1>Sidebar</h1>
-        </div> 
-    )
+            <Poppersidebar>
+                
+                {
+                    
+                    MenuDefault.map((list , index)=>{
+                        return (
+                            <MenuSidebar data={list} key={index} iconSidebar />
+                        )
+                    })
+                }
+            </Poppersidebar>
+    );
 }
 
-export default Sidebar
+export default Sidebar;

@@ -1,5 +1,4 @@
 import Tippy from '@tippyjs/react/headless';
-
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -7,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MenuItems from './MenuItems';
 import styles from './Menu.module.scss';
 import classNames from 'classnames/bind';
-import Poper from './Popper';
+import Poper from '../Popper/index'
 import Header from './header';
 
 const cx = classNames.bind(styles);
