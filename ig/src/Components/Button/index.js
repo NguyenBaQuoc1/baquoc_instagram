@@ -1,11 +1,11 @@
 import styles from './Button.module.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
-import IconHome from '../Icon';
 
 const cx = classNames.bind(styles);
 
 function Button({
+    to=true,
     children,
     signin = false,
     sidebar = false,
@@ -14,12 +14,11 @@ function Button({
     leftIcon,
     className,
     iconSidebar,
-    to,
     href,
     ...passProps
 }) {
     console.log(leftIcon);
-    const Comp = 'button';
+    let Comp = 'button';
     const props = {
         onClick,
         ...passProps,
@@ -39,8 +38,10 @@ function Button({
         iconSidebar,
     });
 
+    console.log(props.to);
+
     return (
-        <Comp className={clasname} {...props}>
+        <Comp to className={clasname} {...props}>
             {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
             {iconSidebar && (
                 <div className={cx('wr-icon')}>

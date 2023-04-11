@@ -10,14 +10,18 @@ function Sidebar() {
         {
             icon: <IconHome/>,
             title: 'Trang chủ',
+            to:'/'
+            
         },
         {
             icon : <IconShort/>,
-            title : "Short"
+            title : "Short",
+            to :'/short'
         },
         {
             icon : <IconSubscriptions/>,
-            title : "Subscriptions"
+            title : "Subscriptions",
+            to:'/subscriptions'
         }
     ];
     return (
@@ -27,7 +31,7 @@ function Sidebar() {
                     
                     MenuDefault.map((list , index)=>{
                         return (
-                            <MenuSidebar data={list} key={index} iconSidebar />
+                            <MenuSidebar data={list}  key={index} iconSidebar />
                         )
                     })
                 }
