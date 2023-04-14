@@ -4,8 +4,8 @@ const Logo = () => (
         preserveAspectRatio="xMidYMid meet"
         focusable="false"
         class="style-scope yt-icon"
-        with="20px"
-        height="20px"
+        with="30px"
+        height="30px"
     >
         <g viewBox="0 0 90 20" preserveAspectRatio="xMidYMid meet" class="style-scope yt-icon">
             <g class="style-scope yt-icon">

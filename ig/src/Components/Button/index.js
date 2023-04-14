@@ -30,7 +30,7 @@ function Button({
         props.href = href;
         Comp = 'a';
     }
-    const clasname = cx('wrapper', {
+    const classname = cx('wrapper', {
         [className]: className,
         signin,
         menu,
@@ -38,10 +38,10 @@ function Button({
         iconSidebar,
     });
 
-    console.log(props.to);
+    console.log(classname );
 
     return (
-        <Comp to className={clasname} {...props}>
+        <Comp to className={classname} {...props}>
             {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
             {iconSidebar && (
                 <div className={cx('wr-icon')}>

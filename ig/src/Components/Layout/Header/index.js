@@ -24,7 +24,7 @@ import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 import React, { useState } from 'react';
 import MenuItems from '../../Menu/MenuHeader/MenuItems';
-import Menu from '../../Menu/MenuHeader/Menu'
+import Menu from '../../Menu/MenuHeader/Menu';
 
 const cx = classNames.bind(styles);
 
@@ -77,10 +77,7 @@ function Header() {
         },
     ];
 
-    const handleHideResult = () => {
-        setShowResult(false);
-    };
-
+   
     const curentUser = false;
 
     return (
@@ -88,11 +85,11 @@ function Header() {
             <div className={cx('inner')}>
                 <div className={cx('start')}>
                     <button className={cx('btn-start')}>
-                        <FontAwesomeIcon icon={faBars}/>
+                        <FontAwesomeIcon icon={faBars} />
                     </button>
-                    <div className={cx('logo')}>
+                    <Button to='/' className={cx('logo')}>
                         <Logo className={cx('icon-logo')} />
-                    </div>
+                    </Button>
                 </div>
 
                 <div className={cx('search')}>
